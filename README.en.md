@@ -77,7 +77,41 @@ The permanent publisher-side fix requires Apple Developer Program access and a n
 
 ## Runtime Setup
 
-The current DMG does not bundle a standalone Python runtime. On a clean Mac without compatible Python 3, install Python 3 first, reopen the app, and use its managed-runtime setup or repair flow. The app-managed environment pins `pymobiledevice3==10.3.0` and does not require administrator privileges.
+The app installs its own `pymobiledevice3` environment, but it does not install Python itself.
+
+If a compatible Python 3 already exists, the app can:
+
+- create an isolated virtual environment at `~/Library/Application Support/RedRiveRR GPS Spoofer/Runtime/venv`;
+- install `pymobiledevice3==10.3.0`, `urllib3<2`, `cryptography<47`, and their dependencies inside that environment;
+- apply and verify the macOS socket-buffer compatibility patch and verify the bundled location-session helper;
+- complete the setup without root, `sudo`, administrator privileges, Homebrew changes, global pip installation, or user-site package changes.
+
+This behavior was validated on an Intel Mac using compatible Xcode Python 3.9.6. Starting without an app-managed runtime produced a fresh environment, installed the pinned package, applied the 7 MiB socket-buffer fallback, and reached `ready` in approximately 2 minutes 16 seconds. Installation time depends on the Mac and network/cache state.
+
+### First Runtime Installation
+
+1. Keep the Mac connected to the internet and launch the app.
+2. Leave the app open while **Environment Setup** checks Python and creates the managed runtime. This can take several minutes.
+3. If installation does not start or the status remains unhealthy, select **Install Managed Runtime**. Use **Repair Runtime** for a partial or incompatible installation.
+4. Wait for the status to show `ready`, `pymobiledevice3 10.3.0`, the host architecture, and successful userspace DVT/socket-buffer checks.
+5. Connect the iPhone only after runtime setup is ready, then refresh and select the device explicitly.
+
+Do not manually run `pip install pymobiledevice3`, do not install it globally, and do not use `sudo`. A separate older user installation can be incompatible even though the app-managed runtime works.
+
+### Mac With No Python
+
+The current DMG does not bundle a standalone Python runtime. On a genuinely clean Mac with no compatible Python 3, automatic dependency installation cannot start. Install a compatible Python 3 distribution first, reopen the app, select **Check Again**, then allow the app to create its managed runtime. This remains a release-candidate limitation; a future truly self-contained DMG requires a signed bundled Python runtime or compiled native helper.
+
+### Clean Reinstall Test
+
+To test the managed installer again without modifying system tools:
+
+1. Stop any active location session and quit RedRiveRR GPS Spoofer normally.
+2. Move only `~/Library/Application Support/RedRiveRR GPS Spoofer/Runtime` to the Bin.
+3. Do not remove `/usr/bin/python3`, Xcode Python, Homebrew Python, the whole RedRiveRR Application Support directory, Keychain items, history, or favorites.
+4. Reopen the app and follow **First Runtime Installation** above.
+
+Removing the Runtime directory deletes the app-managed Python packages. It does not uninstall the app or delete saved history and favorites.
 
 ## Use And Safety
 
