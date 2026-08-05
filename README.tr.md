@@ -77,7 +77,41 @@ Kalıcı yayıncı çözümü; Apple Developer Program erişimi edinmek, yeni s�
 
 ## Runtime Kurulumu
 
-Güncel DMG bağımsız bir Python runtime içermez. Uyumlu Python 3 bulunmayan temiz bir Mac'te önce Python 3 kurun, uygulamayı yeniden açın ve managed-runtime kurulum ya da onarım akışını kullanın. Uygulamanın yönettiği ortam `pymobiledevice3==10.3.0` sürümünü kullanır ve yönetici yetkisi gerektirmez.
+Uygulama kendi `pymobiledevice3` ortamını kurar ancak Python'ı kendisi kurmaz.
+
+Uyumlu Python 3 zaten varsa uygulama:
+
+- `~/Library/Application Support/RedRiveRR GPS Spoofer/Runtime/venv` içinde izole bir virtual environment oluşturabilir;
+- bu ortama `pymobiledevice3==10.3.0`, `urllib3<2`, `cryptography<47` ve bağımlılıklarını kurabilir;
+- macOS socket-buffer uyumluluk düzeltmesini uygulayıp doğrulayabilir ve bundled konum oturumu helper'ını doğrulayabilir;
+- kurulumu root, `sudo`, yönetici yetkisi, Homebrew değişikliği, global pip kurulumu veya user-site paket değişikliği olmadan tamamlayabilir.
+
+Bu davranış uyumlu Xcode Python 3.9.6 bulunan Intel bir Mac'te doğrulandı. App-managed runtime bulunmadan yapılan açılışta uygulama sıfırdan ortam oluşturdu, sabitlenmiş paketi kurdu, 7 MiB socket-buffer fallback uyguladı ve yaklaşık 2 dakika 16 saniyede `ready` durumuna ulaştı. Kurulum süresi Mac'e ve ağ/cache durumuna göre değişir.
+
+### İlk Runtime Kurulumu
+
+1. Mac'i internete bağlı tutun ve uygulamayı açın.
+2. **Environment Setup** Python'ı kontrol edip managed runtime oluştururken uygulamayı açık bırakın. Bu işlem birkaç dakika sürebilir.
+3. Kurulum başlamazsa veya durum sağlıklı hale gelmezse **Install Managed Runtime** seçeneğine basın. Yarım kalmış ya da uyumsuz kurulum için **Repair Runtime** kullanın.
+4. Durumun `ready`, `pymobiledevice3 10.3.0`, doğru Mac mimarisi ve başarılı userspace DVT/socket-buffer kontrollerini göstermesini bekleyin.
+5. Runtime hazır olduktan sonra iPhone'u bağlayın, cihaz listesini yenileyin ve hedef cihazı açıkça seçin.
+
+Elle `pip install pymobiledevice3` çalıştırmayın, paketi global olarak kurmayın ve `sudo` kullanmayın. Eski bir kullanıcı kurulumu uyumsuz olabilirken uygulamanın yönettiği runtime düzgün çalışabilir.
+
+### Python Bulunmayan Mac
+
+Güncel DMG bağımsız bir Python runtime içermez. Uyumlu Python 3 bulunmayan gerçekten temiz bir Mac'te otomatik bağımlılık kurulumu başlayamaz. Önce uyumlu bir Python 3 dağıtımı kurun, uygulamayı yeniden açın, **Check Again** seçeneğine basın ve uygulamanın managed runtime oluşturmasına izin verin. Bu durum release candidate sınırlaması olmaya devam eder; gelecekte tamamen bağımsız DMG için imzalanmış bundled Python runtime veya derlenmiş native helper gerekir.
+
+### Temiz Yeniden Kurulum Testi
+
+Sistem araçlarını değiştirmeden managed installer'ı yeniden test etmek için:
+
+1. Aktif konum oturumunu durdurun ve RedRiveRR GPS Spoofer uygulamasını normal şekilde kapatın.
+2. Yalnızca `~/Library/Application Support/RedRiveRR GPS Spoofer/Runtime` klasörünü Çöp Sepeti'ne taşıyın.
+3. `/usr/bin/python3`, Xcode Python, Homebrew Python, RedRiveRR Application Support klasörünün tamamı, Keychain öğeleri, geçmiş veya favorileri silmeyin.
+4. Uygulamayı yeniden açın ve yukarıdaki **İlk Runtime Kurulumu** adımlarını izleyin.
+
+Runtime klasörünü kaldırmak uygulamanın yönettiği Python paketlerini siler. Uygulamayı kaldırmaz; kayıtlı geçmişi ve favorileri silmez.
 
 ## Kullanım Ve Güvenlik
 
