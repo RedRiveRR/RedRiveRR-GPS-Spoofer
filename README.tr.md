@@ -53,7 +53,27 @@ Jailbreak, root erişimi, `sudo`, yönetici AppleScript'i veya kalıcı kernel t
 3. DMG dosyasını açın ve **RedRiveRR GPS Spoofer** uygulamasını **Applications** klasörüne sürükleyin.
 4. Uygulamayı açın, iPhone'u bağlayıp güvenin ve hedef cihazı uygulamada açıkça seçin.
 
-Bu release candidate imzasız ve notarization yapılmamış olabilir. Son Apple dağıtım kimlik bilgileri ve fiziksel UI doğrulaması tamamlanırken değerlendirme amacıyla sunulur.
+RC3 imzasızdır ve Apple notarization işlemi yapılmamıştır. Son Apple dağıtım kimlik bilgileri ve fiziksel UI doğrulaması tamamlanırken değerlendirme amacıyla sunulur.
+
+## macOS Gatekeeper Uyarısı
+
+RC3, Apple tarafından verilmiş bir Developer ID sertifikasıyla imzalanmamıştır ve Apple notarization işleminden geçmemiştir. Bu nedenle güncel DMG açılırken macOS geliştiricinin doğrulanamadığını veya uygulamanın kötü amaçlı yazılım içerip içermediğinin denetlenemediğini söyleyen uyarıyı gösterir. Bu uyarı, Gatekeeper'ın uygulama için kullanılabilir bir imza veya notarization bileti bulamadığı anlamına gelir; macOS'un uygulamayı kötü amaçlı yazılıma karşı denetleyip onayladığı anlamına gelmez.
+
+Yalnızca DMG dosyasını resmi RedRiveRR GitHub Release sayfasından indirdiyseniz ve SHA-256 değeri yukarıda yayımlanan değerle eşleşiyorsa devam edin.
+
+Güncel RC sürümünü Apple'ın desteklediği güvenlik istisnası akışıyla açmak için:
+
+1. Uyarı penceresinde **Vazgeç** veya **Bitti** seçeneğini seçin. Uygulamayı Çöp Sepeti'ne taşımayın.
+2. macOS Ventura 13 veya sonrasında **Sistem Ayarları → Gizlilik ve Güvenlik** bölümünü açın. macOS Monterey 12'de **Sistem Tercihleri → Güvenlik ve Gizlilik → Genel** bölümünü açın ve istenirse kilit simgesini açın.
+3. RedRiveRR GPS Spoofer için **Yine de Aç** seçeneğine basın.
+4. İstendiğinde Mac giriş parolanız veya Touch ID ile doğrulama yapın.
+5. Uyarı yeniden gösterildiğinde **Aç** seçeneğini seçin.
+
+Apple'a göre **Yine de Aç** seçeneği engellenen açma denemesinden sonra yaklaşık bir saat kullanılabilir. Seçenek görünmüyorsa uygulamayı bir kez daha açmayı deneyip Gizlilik ve Güvenlik sayfasına geri dönün. Şirket veya okul tarafından yönetilen Mac'lerde bu istisna engellenebilir.
+
+Gatekeeper'ı kapatmayın ve Terminal komutlarıyla quarantine niteliğini kaldırmayın. Bu genel yöntemler macOS korumasını zayıflatır ve desteklenen kurulum sürecinin parçası değildir. Apple'ın [Mac'inizde uygulamaları güvenle açma](https://support.apple.com/en-gb/102445) yönergesine bakabilirsiniz.
+
+Kalıcı yayıncı çözümü; Apple Developer Program erişimi edinmek, yeni sürümü Apple **Developer ID Application** sertifikası, Hardened Runtime ve güvenli timestamp ile imzalamak, Apple notary servisine göndermek ve notarization biletini DMG'ye staple etmektir. Sürüm yayımlanmadan önce `codesign`, `stapler` ve Gatekeeper kontrollerinden geçmelidir. Apple bu dağıtım modelini [Developer ID sertifikaları](https://developer.apple.com/help/account/certificates/create-developer-id-certificates) ve [notarization sorunlarını çözme](https://developer.apple.com/documentation/security/resolving-common-notarization-issues) belgelerinde açıklar. Doğru şekilde imzalanıp notarize edilmiş yeni bir paket, bu doğrulanamayan geliştirici uyarısı olmadan normal macOS onay akışıyla açılmalıdır.
 
 ## Runtime Kurulumu
 

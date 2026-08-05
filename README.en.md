@@ -53,7 +53,27 @@ No jailbreak, root access, `sudo`, administrator AppleScript, or persistent kern
 3. Open the DMG and drag **RedRiveRR GPS Spoofer** to **Applications**.
 4. Launch the app, connect and trust the iPhone, then select the target device explicitly.
 
-This release candidate may be unsigned and unnotarized. It is provided for evaluation while final Apple distribution credentials and physical UI validation are completed.
+RC3 is unsigned and unnotarized. It is provided for evaluation while final Apple distribution credentials and physical UI validation are completed.
+
+## macOS Gatekeeper Warning
+
+RC3 is not signed with an Apple-issued Developer ID certificate and has not been notarized by Apple. The current DMG therefore produces the warning that macOS cannot verify the developer or check the app for malicious software. This warning means Gatekeeper has no usable signature or notarization ticket for the app; it does not mean macOS completed a malware check and approved the app.
+
+Only continue if you downloaded the DMG from the official RedRiveRR GitHub Release and its SHA-256 matches the value published above.
+
+To open the current RC using Apple's supported security-exception flow:
+
+1. In the warning dialog, choose **Cancel** or **Done**. Do not move the app to the Bin.
+2. On macOS Ventura 13 or later, open **System Settings → Privacy & Security**. On macOS Monterey 12, open **System Preferences → Security & Privacy → General** and unlock the preference pane if requested.
+3. Select **Open Anyway** for RedRiveRR GPS Spoofer.
+4. Authenticate with your Mac login password or Touch ID when requested.
+5. When the warning appears again, select **Open**.
+
+Apple states that **Open Anyway** is available for about one hour after the blocked launch attempt. If it is not visible, try to launch the app once more and return to Privacy & Security. A Mac managed by a company or school may prevent this override.
+
+Do not disable Gatekeeper and do not use Terminal commands to remove quarantine. These broad workarounds weaken macOS protection and are not part of the supported installation process. See Apple's [Open apps safely on your Mac](https://support.apple.com/en-gb/102445) guidance.
+
+The permanent publisher-side fix requires Apple Developer Program access and a new build signed with an Apple **Developer ID Application** certificate using Hardened Runtime and a secure timestamp, submitted to Apple's notary service, and distributed with the notarization ticket stapled to the DMG. The release must then pass `codesign`, `stapler`, and Gatekeeper assessment before publication. Apple explains this distribution model in [Developer ID certificates](https://developer.apple.com/help/account/certificates/create-developer-id-certificates) and [resolving notarization issues](https://developer.apple.com/documentation/security/resolving-common-notarization-issues). A correctly signed and notarized replacement build should open through the normal macOS confirmation flow without this unidentified-developer warning.
 
 ## Runtime Setup
 
