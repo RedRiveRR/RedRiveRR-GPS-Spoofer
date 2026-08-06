@@ -32,6 +32,8 @@ Only the macOS DMG and its SHA-256 checksum are provided as uploaded Release ass
 
 > **Free-use notice:** RC8 includes five successful single-point location changes on each fresh local app profile. The count persists between launches. After `0/5`, a separately supplied valid license key is required; Clear, Stop, and safety cleanup remain available.
 
+> **Test-key validity:** The separately supplied RC8 test key is evaluation-only. Its embedded signed receipt expires no later than **12 August 2026 at 23:31 UTC**. Production licensing is not active in this release candidate.
+
 > **Runtime notice:** RC8 does not install Python itself. A valid manual Python runtime supports device discovery only; Apply requires the isolated app-managed runtime. Runtime Setup keeps its Terminal command visible in this state. Run it, wait for completion, then select **Check Runtime**. See the [English runtime instructions](README.en.md#runtime-setup) or [Turkish runtime instructions](README.tr.md#runtime-kurulumu).
 
 ## İndirme
@@ -43,6 +45,8 @@ Yüklenen Release asset'leri yalnızca macOS DMG dosyası ve SHA-256 doğrulama 
 > **macOS güvenlik bildirimi:** RC8 imzasızdır ve Apple notarization işlemi yapılmamıştır. macOS geliştiricinin doğrulanamadığını söylerse DMG checksum değerini doğrulayın ve [Türkçe Gatekeeper adımlarını](README.tr.md#macos-gatekeeper-uyarısı) izleyin. Gatekeeper'ı kapatmayın veya Terminal üzerinden quarantine kaldırmayın.
 
 > **Ücretsiz kullanım bildirimi:** RC8, her yeni yerel uygulama profiline beş başarılı tek nokta konum değişikliği verir. Sayaç uygulama yeniden açıldığında korunur. `0/5` sonrasında ayrıca sağlanan geçerli lisans anahtarı gerekir; Clear, Stop ve güvenlik temizliği kullanılabilir kalır.
+
+> **Test anahtarı geçerliliği:** Ayrıca sağlanan RC8 test anahtarı yalnızca değerlendirme içindir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
 
 > **Runtime bildirimi:** RC8 Python'ı kendisi kurmaz. Geçerli manuel Python yalnızca cihaz keşfini destekler; Apply için izole app-managed runtime gerekir. Runtime Setup bu durumda Terminal komutunu görünür tutar. Komutu çalıştırın, tamamlanmasını bekleyin ve **Check Runtime** seçeneğine basın. [Türkçe runtime yönergelerine](README.tr.md#runtime-kurulumu) bakın.
 

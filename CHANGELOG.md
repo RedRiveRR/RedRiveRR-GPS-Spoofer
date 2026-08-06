@@ -9,6 +9,7 @@ Release candidate for Intel and Apple Silicon Macs.
 - Keeps the generated Terminal setup command visible when a healthy manual runtime is detected.
 - Prevents a runtime setup failure from being mislabeled as **Unsupported iOS**; newer reported iOS 26.x versions remain on the userspace DVT strategy.
 - Preserves the five locally persisted free successful single-point changes and separately supplied RC8 test-key flow.
+- Documents that the separately supplied evaluation test receipt expires no later than 12 August 2026 at 23:31 UTC; production licensing remains inactive.
 - Keeps Clear, Stop, and safety cleanup available regardless of runtime, counter, or license state.
 - Passes 115 deterministic macOS tests with 0 failures and ships as a universal `arm64`/`x86_64` build.
 - Remains unsigned and unnotarized; iOS 17.0-17.3.x remains unsupported, and broader physical-device UI validation is still ongoing.

@@ -125,6 +125,8 @@ Removing the Runtime directory deletes the app-managed Python packages. It does 
 
 License keys are not published in this repository or in Release notes. Do not post a key in GitHub Issues, screenshots, or logs.
 
+The separately supplied RC8 test key is evaluation-only. Its embedded signed receipt expires no later than **12 August 2026 at 23:31 UTC**. Production licensing is not active in this release candidate.
+
 ## Use And Safety
 
 - Apply starts a userspace location session for the explicitly selected device.
