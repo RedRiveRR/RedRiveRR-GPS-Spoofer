@@ -125,6 +125,8 @@ Runtime klasörünü kaldırmak uygulamanın yönettiği Python paketlerini sile
 
 Lisans anahtarları bu repoda veya Release notlarında yayımlanmaz. Anahtarı GitHub Issues, ekran görüntüsü veya log içinde paylaşmayın.
 
+Ayrıca sağlanan RC8 test anahtarı yalnızca değerlendirme içindir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
+
 ## Kullanım Ve Güvenlik
 
 - Apply, açıkça seçilmiş cihaz için userspace konum oturumu başlatır.
