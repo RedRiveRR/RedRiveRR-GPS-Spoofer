@@ -1,5 +1,20 @@
 # Release Notes
 
+## 1.1.0-rc.8
+
+Release candidate for Intel and Apple Silicon Macs.
+
+- Fixes the conflicting state where a valid manual Python runtime enabled Apply but persistent userspace DVT later rejected it.
+- Keeps manual Python available for device discovery while requiring the verified app-managed runtime for persistent Apply sessions.
+- Keeps the generated Terminal setup command visible when a healthy manual runtime is detected.
+- Prevents a runtime setup failure from being mislabeled as **Unsupported iOS**; newer reported iOS 26.x versions remain on the userspace DVT strategy.
+- Preserves the five locally persisted free successful single-point changes and separately supplied RC8 test-key flow.
+- Keeps Clear, Stop, and safety cleanup available regardless of runtime, counter, or license state.
+- Passes 115 deterministic macOS tests with 0 failures and ships as a universal `arm64`/`x86_64` build.
+- Remains unsigned and unnotarized; iOS 17.0-17.3.x remains unsupported, and broader physical-device UI validation is still ongoing.
+
+This is not a stable release. License keys are distributed separately and are not included in the repository or Release notes.
+
 ## 1.1.0-rc.7
 
 Release candidate for Intel and Apple Silicon Macs.
