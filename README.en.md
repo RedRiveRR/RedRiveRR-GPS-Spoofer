@@ -5,11 +5,11 @@
 <h1 align="center">RedRiveRR GPS Spoofer</h1>
 
 <p align="center">
-  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.8"><img alt="Release" src="https://img.shields.io/badge/release-v1.1.0--rc.8-black?style=for-the-badge"></a>
+  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9"><img alt="Release" src="https://img.shields.io/badge/release-v1.1.0--rc.9-black?style=for-the-badge"></a>
   <img alt="License" src="https://img.shields.io/badge/license-proprietary-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Architectures" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
-  <img alt="Tests" src="https://img.shields.io/badge/tests-115%20passing-brightgreen?style=for-the-badge">
+  <img alt="Tests" src="https://img.shields.io/badge/tests-122%20passing-brightgreen?style=for-the-badge">
 </p>
 
 > RedRiveRR GPS Spoofer is proprietary, closed-source software. This repository is the official binary distribution page and does not provide source code or permission to copy, modify, reverse engineer, or redistribute the software except as expressly stated in the license.
@@ -18,15 +18,15 @@
 
 ## Current Release
 
-Version `1.1.0-rc.8` is a prerelease release candidate for Intel and Apple Silicon Macs. It is not a stable release.
+Version `1.1.0-rc.9` is a public test prerelease for first-use Developer Mode preparation on Intel and Apple Silicon Macs. It is not a stable release.
 
-- [Download the universal DMG](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.8/RedRiveRR-GPS-Spoofer-1.1.0-rc.8-universal.dmg)
-- [Download the SHA-256 checksum](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.8/RedRiveRR-GPS-Spoofer-1.1.0-rc.8-universal.dmg.sha256)
+- [Download the universal DMG](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg)
+- [Download the SHA-256 checksum](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg.sha256)
 
 Published SHA-256:
 
 ```text
-e6bd3967c7a6f4c341efd92808f3f802fa9281089e672c9855fd23d82e59810e
+ae0298aff3451ff467812eb084b70a6fdbf6ef3c6bb96978af23eccbaa04bdb8
 ```
 
 ## Requirements
@@ -35,7 +35,7 @@ e6bd3967c7a6f4c341efd92808f3f802fa9281089e672c9855fd23d82e59810e
 | --- | --- |
 | macOS | 12.7 or later |
 | Mac | Intel or Apple Silicon |
-| iPhone | Developer Mode enabled |
+| iPhone | iOS 16+ requires Developer Mode; RC9 can prepare the setting for the selected trusted USB device |
 | Connection | Unlocked, trusted USB connection recommended |
 | iOS | Userspace support for iOS 17.4 and later; iOS 17.0-17.3.x is unsupported |
 | Runtime | Compatible Python 3 is required when no healthy app-managed runtime exists |
@@ -48,17 +48,25 @@ No jailbreak, root access, `sudo`, administrator AppleScript, or persistent kern
 2. Verify the checksum in Terminal:
 
    ```bash
-   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.8-universal.dmg
+   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg
    ```
 
 3. Open the DMG and drag **RedRiveRR GPS Spoofer** to **Applications**.
 4. Launch the app, connect and trust the iPhone, then select the target device explicitly.
 
-RC8 is unsigned and unnotarized. It is provided for evaluation while final Apple distribution credentials and broader physical UI validation are completed.
+RC9 is unsigned and unnotarized. It is provided specifically to test the new Developer Mode preparation flow while final Apple distribution credentials and clean-device validation are completed.
+
+## Developer Mode Test
+
+RC9 adds a **Prepare Developer Mode** action for the explicitly selected, unlocked, trusted USB iPhone. It asks Apple's device service to reveal the Developer Mode setting without Xcode, 3uTools, root, `sudo`, administrator AppleScript, or a tunnel.
+
+Apple still requires the user-controlled completion steps. After preparation succeeds, open **Settings → Privacy & Security → Developer Mode** on the iPhone, enable it, accept the restart, and confirm **Enable** after reboot with the device passcode. Return to the app and refresh the status before applying a location.
+
+The existing location, runtime, license, Clear, Stop, and safety-cleanup paths were regression tested. The new first-use preparation flow still requires external validation on an iPhone where Developer Mode has never previously been revealed or enabled.
 
 ## macOS Gatekeeper Warning
 
-RC8 is not signed with an Apple-issued Developer ID certificate and has not been notarized by Apple. The current DMG therefore produces the warning that macOS cannot verify the developer or check the app for malicious software. This warning means Gatekeeper has no usable signature or notarization ticket for the app; it does not mean macOS completed a malware check and approved the app.
+RC9 is not signed with an Apple-issued Developer ID certificate and has not been notarized by Apple. The current DMG therefore produces the warning that macOS cannot verify the developer or check the app for malicious software. This warning means Gatekeeper has no usable signature or notarization ticket for the app; it does not mean macOS completed a malware check and approved the app.
 
 Only continue if you downloaded the DMG from the official RedRiveRR GitHub Release and its SHA-256 matches the value published above.
 
@@ -78,7 +86,7 @@ The permanent publisher-side fix requires Apple Developer Program access and a n
 
 ## Runtime Setup
 
-RC8 uses a guided Terminal setup instead of attempting a silent installation inside the app. It does not install Python itself. A healthy manual Python runtime is sufficient for device discovery, but persistent userspace location sessions require the verified app-managed runtime.
+RC9 uses a guided Terminal setup instead of attempting a silent installation inside the app. It does not install Python itself. A healthy manual Python runtime is sufficient for device discovery, but persistent userspace location sessions require the verified app-managed runtime.
 
 When a compatible Python 3 exists, the command displayed by **Runtime Setup**:
 
@@ -91,7 +99,7 @@ When a compatible Python 3 exists, the command displayed by **Runtime Setup**:
 
 1. Keep the Mac connected to the internet and launch the app.
 2. Open **Runtime Setup** beside **Need help?**. If it reports that Python is missing, install Python 3 from the official Python website, reopen the app, and return to Runtime Setup.
-   If it reports **Manual Python runtime**, the app may discover devices but Apply remains unavailable. RC8 keeps the required Terminal command visible so you can complete the app-managed setup.
+   If it reports **Manual Python runtime**, the app may discover devices but Apply remains unavailable. RC9 keeps the required Terminal command visible so you can complete the app-managed setup.
 3. Copy the complete command shown by the app and select **Open Terminal**.
 4. Paste the command into Terminal, press Return, and wait for the completion message. Package download and setup can take several minutes.
 5. Return to the app and select **Check Runtime**. Continue only after it reports a healthy app-managed runtime with `pymobiledevice3 10.3.0` and the correct host architecture.
@@ -119,13 +127,13 @@ Removing the Runtime directory deletes the app-managed Python packages. It does 
 - A fresh local app profile starts with `5/5` free successful single-point location changes.
 - Each successful **Apply Location**, favorite, or history coordinate update consumes one free use. A failed Apply does not consume a use.
 - The remaining count is stored locally and persists when the app is closed or the Mac restarts.
-- At `0/5`, new location changes are locked until a valid RC8 license key supplied separately by RedRiveRR is activated.
+- At `0/5`, new location changes are locked until a valid RC9-compatible license key supplied separately by RedRiveRR is activated.
 - Route and joystick functions are not unlocked by the free-use counter.
 - Clear, Stop, and safety cleanup are never blocked by the counter or license state.
 
 License keys are not published in this repository or in Release notes. Do not post a key in GitHub Issues, screenshots, or logs.
 
-The separately supplied RC8 test key is evaluation-only. Its embedded signed receipt expires no later than **12 August 2026 at 23:31 UTC**. Production licensing is not active in this release candidate.
+The same separately supplied evaluation test key remains accepted by RC9. Its embedded signed receipt expires no later than **12 August 2026 at 23:31 UTC**. Production licensing is not active in this release candidate.
 
 ## Use And Safety
 
@@ -141,7 +149,7 @@ The separately supplied RC8 test key is evaluation-only. Its embedded signed rec
 - Apple MapKit may download map data.
 - Runtime setup may download pinned packages and dependencies.
 - Update checks may request public GitHub release metadata.
-- Production payment and online licensing are not active in this release candidate. RC8 can verify a separately supplied test license key locally after the five free changes are used.
+- Production payment and online licensing are not active in this release candidate. RC9 can verify a separately supplied test license key locally after the five free changes are used.
 
 ## Support
 

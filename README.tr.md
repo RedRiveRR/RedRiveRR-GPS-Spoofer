@@ -5,11 +5,11 @@
 <h1 align="center">RedRiveRR GPS Spoofer</h1>
 
 <p align="center">
-  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.8"><img alt="Sürüm" src="https://img.shields.io/badge/release-v1.1.0--rc.8-black?style=for-the-badge"></a>
+  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9"><img alt="Sürüm" src="https://img.shields.io/badge/release-v1.1.0--rc.9-black?style=for-the-badge"></a>
   <img alt="Lisans" src="https://img.shields.io/badge/lisans-kapal%C4%B1%20kaynak-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Mimariler" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
-  <img alt="Testler" src="https://img.shields.io/badge/tests-115%20passing-brightgreen?style=for-the-badge">
+  <img alt="Testler" src="https://img.shields.io/badge/tests-122%20passing-brightgreen?style=for-the-badge">
 </p>
 
 > RedRiveRR GPS Spoofer tescilli, kapalı kaynak bir yazılımdır. Bu repo resmi binary dağıtım sayfasıdır; kaynak kod sunmaz ve lisansta açıkça izin verilen durumlar dışında yazılımı kopyalama, değiştirme, tersine mühendislik veya yeniden dağıtma izni vermez.
@@ -18,15 +18,15 @@
 
 ## Güncel Sürüm
 
-`1.1.0-rc.8`, Intel ve Apple Silicon Mac'ler için bir ön sürüm release candidate paketidir. Kararlı sürüm değildir.
+`1.1.0-rc.9`, Intel ve Apple Silicon Mac'lerde ilk Developer Mode hazırlığını sınamak için yayımlanan public test ön sürümüdür. Kararlı sürüm değildir.
 
-- [Universal DMG dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.8/RedRiveRR-GPS-Spoofer-1.1.0-rc.8-universal.dmg)
-- [SHA-256 doğrulama dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.8/RedRiveRR-GPS-Spoofer-1.1.0-rc.8-universal.dmg.sha256)
+- [Universal DMG dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg)
+- [SHA-256 doğrulama dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg.sha256)
 
 Yayımlanan SHA-256:
 
 ```text
-e6bd3967c7a6f4c341efd92808f3f802fa9281089e672c9855fd23d82e59810e
+ae0298aff3451ff467812eb084b70a6fdbf6ef3c6bb96978af23eccbaa04bdb8
 ```
 
 ## Gereksinimler
@@ -35,7 +35,7 @@ e6bd3967c7a6f4c341efd92808f3f802fa9281089e672c9855fd23d82e59810e
 | --- | --- |
 | macOS | 12.7 veya sonrası |
 | Mac | Intel veya Apple Silicon |
-| iPhone | Developer Mode açık olmalı |
+| iPhone | iOS 16+ için Developer Mode gerekir; RC9 seçilmiş ve güvenilmiş USB cihazında ayarı hazırlayabilir |
 | Bağlantı | Kilidi açık, güvenilmiş USB bağlantısı önerilir |
 | iOS | iOS 17.4 ve sonrası userspace desteği; iOS 17.0-17.3.x desteklenmez |
 | Runtime | Sağlıklı app-managed runtime yoksa uyumlu Python 3 gerekir |
@@ -48,17 +48,25 @@ Jailbreak, root erişimi, `sudo`, yönetici AppleScript'i veya kalıcı kernel t
 2. Terminal'de checksum değerini doğrulayın:
 
    ```bash
-   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.8-universal.dmg
+   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg
    ```
 
 3. DMG dosyasını açın ve **RedRiveRR GPS Spoofer** uygulamasını **Applications** klasörüne sürükleyin.
 4. Uygulamayı açın, iPhone'u bağlayıp güvenin ve hedef cihazı uygulamada açıkça seçin.
 
-RC8 imzasızdır ve Apple notarization işlemi yapılmamıştır. Son Apple dağıtım kimlik bilgileri ve daha geniş fiziksel UI doğrulaması tamamlanırken değerlendirme amacıyla sunulur.
+RC9 imzasızdır ve Apple notarization işlemi yapılmamıştır. Yeni Developer Mode hazırlama akışını sınamak için, son Apple dağıtım kimlik bilgileri ve temiz cihaz doğrulaması tamamlanana kadar test amacıyla sunulur.
+
+## Developer Mode Testi
+
+RC9; açıkça seçilmiş, kilidi açık ve güvenilmiş USB iPhone için **Prepare Developer Mode** eylemini ekler. Apple'ın cihaz servisi üzerinden Developer Mode ayarını Xcode, 3uTools, root, `sudo`, yönetici AppleScript'i veya tunnel kullanmadan görünür hâle getirmeyi ister.
+
+Apple'ın zorunlu tuttuğu kullanıcı adımları devam eder. Hazırlık başarılı olduktan sonra iPhone'da **Ayarlar → Gizlilik ve Güvenlik → Developer Mode** bölümünü açın, ayarı etkinleştirin, yeniden başlatmayı kabul edin ve cihaz açıldıktan sonra parolayla **Enable** onayını verin. Konum uygulamadan önce uygulamaya dönüp durumu yenileyin.
+
+Mevcut konum, runtime, lisans, Clear, Stop ve güvenlik temizliği akışları regresyon testinden geçti. Yeni ilk kullanım hazırlığı, Developer Mode ayarı daha önce hiç görünür olmamış veya açılmamış bir iPhone'da harici doğrulama gerektirir.
 
 ## macOS Gatekeeper Uyarısı
 
-RC8, Apple tarafından verilmiş bir Developer ID sertifikasıyla imzalanmamıştır ve Apple notarization işleminden geçmemiştir. Bu nedenle güncel DMG açılırken macOS geliştiricinin doğrulanamadığını veya uygulamanın kötü amaçlı yazılım içerip içermediğinin denetlenemediğini söyleyen uyarıyı gösterir. Bu uyarı, Gatekeeper'ın uygulama için kullanılabilir bir imza veya notarization bileti bulamadığı anlamına gelir; macOS'un uygulamayı kötü amaçlı yazılıma karşı denetleyip onayladığı anlamına gelmez.
+RC9, Apple tarafından verilmiş bir Developer ID sertifikasıyla imzalanmamıştır ve Apple notarization işleminden geçmemiştir. Bu nedenle güncel DMG açılırken macOS geliştiricinin doğrulanamadığını veya uygulamanın kötü amaçlı yazılım içerip içermediğinin denetlenemediğini söyleyen uyarıyı gösterir. Bu uyarı, Gatekeeper'ın uygulama için kullanılabilir bir imza veya notarization bileti bulamadığı anlamına gelir; macOS'un uygulamayı kötü amaçlı yazılıma karşı denetleyip onayladığı anlamına gelmez.
 
 Yalnızca DMG dosyasını resmi RedRiveRR GitHub Release sayfasından indirdiyseniz ve SHA-256 değeri yukarıda yayımlanan değerle eşleşiyorsa devam edin.
 
@@ -78,7 +86,7 @@ Kalıcı yayıncı çözümü; Apple Developer Program erişimi edinmek, yeni s�
 
 ## Runtime Kurulumu
 
-RC8, uygulama içinden sessiz kurulum denemek yerine yönlendirmeli Terminal kurulumu kullanır. Python'ı kendisi kurmaz. Sağlıklı manuel Python cihaz keşfi için yeterlidir; kalıcı userspace konum oturumları doğrulanmış app-managed runtime gerektirir.
+RC9, uygulama içinden sessiz kurulum denemek yerine yönlendirmeli Terminal kurulumu kullanır. Python'ı kendisi kurmaz. Sağlıklı manuel Python cihaz keşfi için yeterlidir; kalıcı userspace konum oturumları doğrulanmış app-managed runtime gerektirir.
 
 Uyumlu Python 3 varsa **Runtime Setup** ekranındaki komut:
 
@@ -91,7 +99,7 @@ Uyumlu Python 3 varsa **Runtime Setup** ekranındaki komut:
 
 1. Mac'i internete bağlı tutun ve uygulamayı açın.
 2. **Need help?** yanındaki **Runtime Setup** ekranını açın. Python eksik bildiriliyorsa resmi Python sitesinden Python 3 kurun, uygulamayı yeniden açın ve Runtime Setup'a dönün.
-   Ekranda **Manual Python runtime** görünüyorsa uygulama cihazları bulabilir ancak Apply kullanılamaz. RC8 gerekli Terminal komutunu görünür tutar; app-managed kurulumu bu komutla tamamlayın.
+   Ekranda **Manual Python runtime** görünüyorsa uygulama cihazları bulabilir ancak Apply kullanılamaz. RC9 gerekli Terminal komutunu görünür tutar; app-managed kurulumu bu komutla tamamlayın.
 3. Uygulamanın gösterdiği komutun tamamını kopyalayın ve **Open Terminal** seçeneğine basın.
 4. Komutu Terminal'e yapıştırıp Return tuşuna basın ve tamamlanma mesajını bekleyin. Paket indirme ve kurulum birkaç dakika sürebilir.
 5. Uygulamaya dönüp **Check Runtime** seçeneğine basın. `pymobiledevice3 10.3.0` ve doğru host mimarisiyle sağlıklı app-managed runtime bildirilmeden devam etmeyin.
@@ -119,13 +127,13 @@ Runtime klasörünü kaldırmak uygulamanın yönettiği Python paketlerini sile
 - Yeni bir yerel uygulama profili `5/5` ücretsiz başarılı tek nokta konum değişikliğiyle başlar.
 - Her başarılı **Apply Location**, favori veya geçmiş koordinatı güncellemesi bir hak kullanır. Başarısız Apply hak kullanmaz.
 - Kalan hak sayısı yerel olarak saklanır; uygulama kapatıldığında veya Mac yeniden başlatıldığında korunur.
-- `0/5` sonrasında yeni konum değişiklikleri, RedRiveRR tarafından ayrıca sağlanan geçerli RC8 lisans anahtarı etkinleştirilene kadar kilitlenir.
+- `0/5` sonrasında yeni konum değişiklikleri, RedRiveRR tarafından ayrıca sağlanan geçerli RC9 uyumlu lisans anahtarı etkinleştirilene kadar kilitlenir.
 - Route ve joystick işlevleri ücretsiz hak sayacıyla açılmaz.
 - Clear, Stop ve güvenlik temizliği sayaç veya lisans durumundan dolayı asla engellenmez.
 
 Lisans anahtarları bu repoda veya Release notlarında yayımlanmaz. Anahtarı GitHub Issues, ekran görüntüsü veya log içinde paylaşmayın.
 
-Ayrıca sağlanan RC8 test anahtarı yalnızca değerlendirme içindir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
+Ayrıca sağlanan aynı değerlendirme test anahtarı RC9 tarafından kabul edilir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
 
 ## Kullanım Ve Güvenlik
 
@@ -141,7 +149,7 @@ Ayrıca sağlanan RC8 test anahtarı yalnızca değerlendirme içindir. Gömül�
 - Apple MapKit harita verisi indirebilir.
 - Runtime kurulumu sabitlenmiş paketleri ve bağımlılıkları indirebilir.
 - Güncelleme kontrolü public GitHub sürüm bilgisini sorgulayabilir.
-- Bu release candidate içinde production ödeme ve online lisanslama aktif değildir. RC8, beş ücretsiz hak bittikten sonra ayrıca sağlanan test lisans anahtarını yerel olarak doğrulayabilir.
+- Bu release candidate içinde production ödeme ve online lisanslama aktif değildir. RC9, beş ücretsiz hak bittikten sonra ayrıca sağlanan test lisans anahtarını yerel olarak doğrulayabilir.
 
 ## Destek
 

@@ -1,5 +1,21 @@
 # Release Notes
 
+## 1.1.0-rc.9 - Developer Mode Test
+
+Public test prerelease for Intel and Apple Silicon Macs. This is not a stable release.
+
+- Adds selected-device Developer Mode status reporting and a **Prepare Developer Mode** action for unlocked, trusted USB iPhones.
+- Uses Apple's device service to reveal the Developer Mode setting without Xcode, 3uTools, root, `sudo`, administrator AppleScript, or a kernel/userspace tunnel.
+- Keeps Apple's required user steps explicit: enable Developer Mode on the iPhone, restart, confirm after reboot, and refresh status in the app.
+- Blocks a new Apply when a modern selected device explicitly reports Developer Mode disabled without consuming a free use.
+- Leaves Clear, Stop, and safety cleanup unchanged and available in every runtime, counter, and license state.
+- Preserves the existing app-managed `pymobiledevice3==10.3.0` runtime and the same separately supplied evaluation test-key flow.
+- Passes 122 deterministic macOS tests with 0 failures and ships as build 115 for universal `arm64`/`x86_64` Macs.
+- RC8's existing product paths were physically validated on two M4 Macs and one 2018 Intel Mac; RC9's first-use preparation still needs external testing on an iPhone where Developer Mode has never been revealed.
+- Remains unsigned and unnotarized; iOS 17.0-17.3.x remains unsupported.
+
+Only the DMG and SHA-256 file are published as Release assets. Source code remains private.
+
 ## 1.1.0-rc.8
 
 Release candidate for Intel and Apple Silicon Macs.
