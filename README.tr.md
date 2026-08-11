@@ -5,7 +5,7 @@
 <h1 align="center">RedRiveRR GPS Spoofer</h1>
 
 <p align="center">
-  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9"><img alt="Sürüm" src="https://img.shields.io/badge/release-v1.1.0--rc.9-black?style=for-the-badge"></a>
+  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.10"><img alt="Sürüm" src="https://img.shields.io/badge/release-v1.1.0--rc.10-black?style=for-the-badge"></a>
   <img alt="Lisans" src="https://img.shields.io/badge/lisans-kapal%C4%B1%20kaynak-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Mimariler" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
@@ -18,15 +18,21 @@
 
 ## Güncel Sürüm
 
-`1.1.0-rc.9`, Intel ve Apple Silicon Mac'lerde ilk Developer Mode hazırlığını sınamak için yayımlanan public test ön sürümüdür. Kararlı sürüm değildir.
+`1.1.0-rc.10` bir public test ön sürümüdür. Kararlı sürüm değildir.
 
-- [Universal DMG dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg)
-- [SHA-256 doğrulama dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg.sha256)
+Konum simülasyonu için tek mod Oturum (Session) Modu'dur; Kalıcı (Persistent) Mod kaldırılmıştır. Bu sürüm, uygulama içi dil değiştirme ile Türkçe ve İngilizce yerelleştirme, cihaz tak-çıkar algılama ve yeniden bağlanma yönetimi ve çalışma ortamı onarımı desteği getirir.
+
+Bu yapı imzasız ve notarize edilmemiştir. Bu bilinçli bir tercihtir — aşağıdaki kurulum adımlarına bakın.
+
+**Bilinen kısıt:** universal binary hem `x86_64` hem `arm64` slice içerir, ancak Apple Silicon bu projede fiziksel olarak test edilmemiştir.
+
+- [Universal DMG dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg)
+- [SHA-256 doğrulama dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg.sha256)
 
 Yayımlanan SHA-256:
 
 ```text
-ae0298aff3451ff467812eb084b70a6fdbf6ef3c6bb96978af23eccbaa04bdb8
+517262bb6b77d02bd26c1f0f04666772c15222feb6451eaae9df59a3554e25a6
 ```
 
 ## Gereksinimler
@@ -48,7 +54,7 @@ Jailbreak, root erişimi, `sudo`, yönetici AppleScript'i veya kalıcı kernel t
 2. Terminal'de checksum değerini doğrulayın:
 
    ```bash
-   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg
+   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg
    ```
 
 3. DMG dosyasını açın ve **RedRiveRR GPS Spoofer** uygulamasını **Applications** klasörüne sürükleyin.

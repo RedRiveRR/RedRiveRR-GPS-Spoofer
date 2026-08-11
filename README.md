@@ -5,7 +5,7 @@
 <h1 align="center">RedRiveRR GPS Spoofer</h1>
 
 <p align="center">
-  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9"><img alt="Release" src="https://img.shields.io/badge/release-v1.1.0--rc.9-black?style=for-the-badge"></a>
+  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.10"><img alt="Release" src="https://img.shields.io/badge/release-v1.1.0--rc.10-black?style=for-the-badge"></a>
   <img alt="License" src="https://img.shields.io/badge/license-proprietary-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Architectures" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
@@ -24,7 +24,7 @@
 
 ## Download
 
-Download the current Developer Mode test release candidate from [GitHub Releases](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9).
+Download the current test release candidate from [GitHub Releases](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.10).
 
 Only the macOS DMG and its SHA-256 checksum are provided as uploaded Release assets. This repository contains distribution documentation and branding only.
 
@@ -40,7 +40,7 @@ Only the macOS DMG and its SHA-256 checksum are provided as uploaded Release ass
 
 ## İndirme
 
-Güncel Developer Mode test release candidate sürümünü [GitHub Releases](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9) sayfasından indirin.
+Güncel Developer Mode test release candidate sürümünü [GitHub Releases](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.10) sayfasından indirin.
 
 Yüklenen Release asset'leri yalnızca macOS DMG dosyası ve SHA-256 doğrulama dosyasıdır. Bu repo sadece dağıtım belgelerini ve marka varlığını içerir.
 

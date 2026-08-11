@@ -5,7 +5,7 @@
 <h1 align="center">RedRiveRR GPS Spoofer</h1>
 
 <p align="center">
-  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.9"><img alt="Release" src="https://img.shields.io/badge/release-v1.1.0--rc.9-black?style=for-the-badge"></a>
+  <a href="https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/tag/v1.1.0-rc.10"><img alt="Release" src="https://img.shields.io/badge/release-v1.1.0--rc.10-black?style=for-the-badge"></a>
   <img alt="License" src="https://img.shields.io/badge/license-proprietary-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Architectures" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
@@ -18,15 +18,21 @@
 
 ## Current Release
 
-Version `1.1.0-rc.9` is a public test prerelease for first-use Developer Mode preparation on Intel and Apple Silicon Macs. It is not a stable release.
+Version `1.1.0-rc.10` is a public test prerelease. It is not a stable release.
 
-- [Download the universal DMG](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg)
-- [Download the SHA-256 checksum](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.9/RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg.sha256)
+Session Mode is the only location simulation mode; Persistent Mode has been removed. This release adds Turkish and English localization with an in-app language switch, device hot-plug detection and reconnect handling, and runtime repair support.
+
+This build is unsigned and not notarized. That is intentional — see the installation steps below.
+
+**Known limitation:** the universal binary contains both `x86_64` and `arm64` slices, but Apple Silicon has not been physically tested for this project.
+
+- [Download the universal DMG](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg)
+- [Download the SHA-256 checksum](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg.sha256)
 
 Published SHA-256:
 
 ```text
-ae0298aff3451ff467812eb084b70a6fdbf6ef3c6bb96978af23eccbaa04bdb8
+517262bb6b77d02bd26c1f0f04666772c15222feb6451eaae9df59a3554e25a6
 ```
 
 ## Requirements
@@ -48,7 +54,7 @@ No jailbreak, root access, `sudo`, administrator AppleScript, or persistent kern
 2. Verify the checksum in Terminal:
 
    ```bash
-   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.9-universal.dmg
+   shasum -a 256 RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg
    ```
 
 3. Open the DMG and drag **RedRiveRR GPS Spoofer** to **Applications**.
