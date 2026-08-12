@@ -9,7 +9,7 @@
   <img alt="License" src="https://img.shields.io/badge/license-proprietary-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Architectures" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
-  <img alt="Tests" src="https://img.shields.io/badge/tests-122%20passing-brightgreen?style=for-the-badge">
+  <img alt="Tests" src="https://img.shields.io/badge/tests-244%20passing-brightgreen?style=for-the-badge">
 </p>
 
 <p align="center">

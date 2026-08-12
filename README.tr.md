@@ -9,7 +9,7 @@
   <img alt="Lisans" src="https://img.shields.io/badge/lisans-kapal%C4%B1%20kaynak-black?style=for-the-badge">
   <img alt="macOS" src="https://img.shields.io/badge/macOS-12.7%2B-black?style=for-the-badge&logo=apple">
   <img alt="Mimariler" src="https://img.shields.io/badge/Universal-Intel%20%2B%20Apple%20Silicon-black?style=for-the-badge">
-  <img alt="Testler" src="https://img.shields.io/badge/tests-122%20passing-brightgreen?style=for-the-badge">
+  <img alt="Testler" src="https://img.shields.io/badge/tests-244%20passing-brightgreen?style=for-the-badge">
 </p>
 
 > RedRiveRR GPS Spoofer tescilli, kapalı kaynak bir yazılımdır. Bu repo resmi binary dağıtım sayfasıdır; kaynak kod sunmaz ve lisansta açıkça izin verilen durumlar dışında yazılımı kopyalama, değiştirme, tersine mühendislik veya yeniden dağıtma izni vermez.
@@ -26,7 +26,7 @@ Arayüz **English** ve **Türkçe** dillerinde kullanılabilir; **Ayarlar -> Gen
 
 Bu yapı imzasız ve notarize edilmemiştir. Bu bilinçli bir tercihtir — aşağıdaki kurulum adımlarına bakın.
 
-Universal binary hem `x86_64` hem `arm64` slice içerir ve bu sürüm Intel ile Apple Silicon Mac'lerde fiziksel olarak test edilmiştir.
+Universal `x86_64` + `arm64` binary. Bu sürüm hem Intel hem Apple Silicon donanımda fiziksel olarak doğrulanmıştır.
 
 - [Universal DMG dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg)
 - [SHA-256 doğrulama dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg.sha256)

@@ -10,7 +10,7 @@ Public prerelease for Intel and Apple Silicon Macs. This is not a stable release
 - Retry now performs a real rediscovery instead of reusing cached runtime and device handles.
 - Restore no longer stalls: the helper IPC write is bounded, and device polling pauses while a session owns the iPhone.
 - Production licensing is active. Keys are delivered by email, revealed on the claim page and activated in the app.
-- Physically tested on Intel and Apple Silicon Macs: Apply, Stop, Restore, repeated Apply/Stop/Restore cycles, and hot-plug reconnect.
+- Physically validated on both Intel and Apple Silicon hardware: Apply, Stop, Restore, repeated Apply/Stop/Restore cycles, hot-plug reconnect, and a real production licence purchase and activation.
 - 244 deterministic macOS tests pass with 0 failures. Universal `arm64`/`x86_64`, deployment target macOS 12.7.
 - Remains unsigned and unnotarized by design. iOS 17.0-17.3.x remains unsupported.
 
