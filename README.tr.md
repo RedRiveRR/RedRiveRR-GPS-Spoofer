@@ -41,7 +41,7 @@ Yayımlanan SHA-256:
 | --- | --- |
 | macOS | 12.7 veya sonrası |
 | Mac | Intel veya Apple Silicon |
-| iPhone | iOS 16+ için Developer Mode gerekir; RC9 seçilmiş ve güvenilmiş USB cihazında ayarı hazırlayabilir |
+| iPhone | iOS 16+ için Developer Mode gerekir; RC10 seçilmiş ve güvenilmiş USB cihazında ayarı hazırlayabilir |
 | Bağlantı | Kilidi açık, güvenilmiş USB bağlantısı önerilir |
 | iOS | iOS 17.4 ve sonrası userspace desteği; iOS 17.0-17.3.x desteklenmez |
 | Runtime | Sağlıklı app-managed runtime yoksa uyumlu Python 3 gerekir |
@@ -60,11 +60,11 @@ Jailbreak, root erişimi, `sudo`, yönetici AppleScript'i veya kalıcı kernel t
 3. DMG dosyasını açın ve **RedRiveRR GPS Spoofer** uygulamasını **Applications** klasörüne sürükleyin.
 4. Uygulamayı açın, iPhone'u bağlayıp güvenin ve hedef cihazı uygulamada açıkça seçin.
 
-RC9 imzasızdır ve Apple notarization işlemi yapılmamıştır. Yeni Developer Mode hazırlama akışını sınamak için, son Apple dağıtım kimlik bilgileri ve temiz cihaz doğrulaması tamamlanana kadar test amacıyla sunulur.
+RC10 imzasızdır ve Apple notarization işlemi yapılmamıştır. Yeni Developer Mode hazırlama akışını sınamak için, son Apple dağıtım kimlik bilgileri ve temiz cihaz doğrulaması tamamlanana kadar test amacıyla sunulur.
 
 ## Developer Mode Testi
 
-RC9; açıkça seçilmiş, kilidi açık ve güvenilmiş USB iPhone için **Prepare Developer Mode** eylemini ekler. Apple'ın cihaz servisi üzerinden Developer Mode ayarını Xcode, 3uTools, root, `sudo`, yönetici AppleScript'i veya tunnel kullanmadan görünür hâle getirmeyi ister.
+RC10; açıkça seçilmiş, kilidi açık ve güvenilmiş USB iPhone için **Prepare Developer Mode** eylemini ekler. Apple'ın cihaz servisi üzerinden Developer Mode ayarını Xcode, 3uTools, root, `sudo`, yönetici AppleScript'i veya tunnel kullanmadan görünür hâle getirmeyi ister.
 
 Apple'ın zorunlu tuttuğu kullanıcı adımları devam eder. Hazırlık başarılı olduktan sonra iPhone'da **Ayarlar → Gizlilik ve Güvenlik → Developer Mode** bölümünü açın, ayarı etkinleştirin, yeniden başlatmayı kabul edin ve cihaz açıldıktan sonra parolayla **Enable** onayını verin. Konum uygulamadan önce uygulamaya dönüp durumu yenileyin.
 
@@ -72,7 +72,7 @@ Mevcut konum, runtime, lisans, Clear, Stop ve güvenlik temizliği akışları r
 
 ## macOS Gatekeeper Uyarısı
 
-RC9, Apple tarafından verilmiş bir Developer ID sertifikasıyla imzalanmamıştır ve Apple notarization işleminden geçmemiştir. Bu nedenle güncel DMG açılırken macOS geliştiricinin doğrulanamadığını veya uygulamanın kötü amaçlı yazılım içerip içermediğinin denetlenemediğini söyleyen uyarıyı gösterir. Bu uyarı, Gatekeeper'ın uygulama için kullanılabilir bir imza veya notarization bileti bulamadığı anlamına gelir; macOS'un uygulamayı kötü amaçlı yazılıma karşı denetleyip onayladığı anlamına gelmez.
+RC10, Apple tarafından verilmiş bir Developer ID sertifikasıyla imzalanmamıştır ve Apple notarization işleminden geçmemiştir. Bu nedenle güncel DMG açılırken macOS geliştiricinin doğrulanamadığını veya uygulamanın kötü amaçlı yazılım içerip içermediğinin denetlenemediğini söyleyen uyarıyı gösterir. Bu uyarı, Gatekeeper'ın uygulama için kullanılabilir bir imza veya notarization bileti bulamadığı anlamına gelir; macOS'un uygulamayı kötü amaçlı yazılıma karşı denetleyip onayladığı anlamına gelmez.
 
 Yalnızca DMG dosyasını resmi RedRiveRR GitHub Release sayfasından indirdiyseniz ve SHA-256 değeri yukarıda yayımlanan değerle eşleşiyorsa devam edin.
 
@@ -92,7 +92,7 @@ Kalıcı yayıncı çözümü; Apple Developer Program erişimi edinmek, yeni s�
 
 ## Runtime Kurulumu
 
-RC9, uygulama içinden sessiz kurulum denemek yerine yönlendirmeli Terminal kurulumu kullanır. Python'ı kendisi kurmaz. Sağlıklı manuel Python cihaz keşfi için yeterlidir; kalıcı userspace konum oturumları doğrulanmış app-managed runtime gerektirir.
+RC10, uygulama içinden sessiz kurulum denemek yerine yönlendirmeli Terminal kurulumu kullanır. Python'ı kendisi kurmaz. Sağlıklı manuel Python cihaz keşfi için yeterlidir; kalıcı userspace konum oturumları doğrulanmış app-managed runtime gerektirir.
 
 Uyumlu Python 3 varsa **Runtime Setup** ekranındaki komut:
 
@@ -105,7 +105,7 @@ Uyumlu Python 3 varsa **Runtime Setup** ekranındaki komut:
 
 1. Mac'i internete bağlı tutun ve uygulamayı açın.
 2. **Need help?** yanındaki **Runtime Setup** ekranını açın. Python eksik bildiriliyorsa resmi Python sitesinden Python 3 kurun, uygulamayı yeniden açın ve Runtime Setup'a dönün.
-   Ekranda **Manual Python runtime** görünüyorsa uygulama cihazları bulabilir ancak Apply kullanılamaz. RC9 gerekli Terminal komutunu görünür tutar; app-managed kurulumu bu komutla tamamlayın.
+   Ekranda **Manual Python runtime** görünüyorsa uygulama cihazları bulabilir ancak Apply kullanılamaz. RC10 gerekli Terminal komutunu görünür tutar; app-managed kurulumu bu komutla tamamlayın.
 3. Uygulamanın gösterdiği komutun tamamını kopyalayın ve **Open Terminal** seçeneğine basın.
 4. Komutu Terminal'e yapıştırıp Return tuşuna basın ve tamamlanma mesajını bekleyin. Paket indirme ve kurulum birkaç dakika sürebilir.
 5. Uygulamaya dönüp **Check Runtime** seçeneğine basın. `pymobiledevice3 10.3.0` ve doğru host mimarisiyle sağlıklı app-managed runtime bildirilmeden devam etmeyin.
@@ -133,13 +133,13 @@ Runtime klasörünü kaldırmak uygulamanın yönettiği Python paketlerini sile
 - Yeni bir yerel uygulama profili `5/5` ücretsiz başarılı tek nokta konum değişikliğiyle başlar.
 - Her başarılı **Apply Location**, favori veya geçmiş koordinatı güncellemesi bir hak kullanır. Başarısız Apply hak kullanmaz.
 - Kalan hak sayısı yerel olarak saklanır; uygulama kapatıldığında veya Mac yeniden başlatıldığında korunur.
-- `0/5` sonrasında yeni konum değişiklikleri, RedRiveRR tarafından ayrıca sağlanan geçerli RC9 uyumlu lisans anahtarı etkinleştirilene kadar kilitlenir.
+- `0/5` sonrasında yeni konum değişiklikleri, RedRiveRR tarafından ayrıca sağlanan geçerli RC10 uyumlu lisans anahtarı etkinleştirilene kadar kilitlenir.
 - Route ve joystick işlevleri ücretsiz hak sayacıyla açılmaz.
 - Clear, Stop ve güvenlik temizliği sayaç veya lisans durumundan dolayı asla engellenmez.
 
 Lisans anahtarları bu repoda veya Release notlarında yayımlanmaz. Anahtarı GitHub Issues, ekran görüntüsü veya log içinde paylaşmayın.
 
-Ayrıca sağlanan aynı değerlendirme test anahtarı RC9 tarafından kabul edilir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
+Ayrıca sağlanan aynı değerlendirme test anahtarı RC10 tarafından kabul edilir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
 
 ## Kullanım Ve Güvenlik
 
@@ -155,7 +155,7 @@ Ayrıca sağlanan aynı değerlendirme test anahtarı RC9 tarafından kabul edil
 - Apple MapKit harita verisi indirebilir.
 - Runtime kurulumu sabitlenmiş paketleri ve bağımlılıkları indirebilir.
 - Güncelleme kontrolü public GitHub sürüm bilgisini sorgulayabilir.
-- Bu release candidate içinde production ödeme ve online lisanslama aktif değildir. RC9, beş ücretsiz hak bittikten sonra ayrıca sağlanan test lisans anahtarını yerel olarak doğrulayabilir.
+- Bu release candidate içinde production ödeme ve online lisanslama aktif değildir. RC10, beş ücretsiz hak bittikten sonra ayrıca sağlanan test lisans anahtarını yerel olarak doğrulayabilir.
 
 ## Destek
 

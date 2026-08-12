@@ -41,7 +41,7 @@ Published SHA-256:
 | --- | --- |
 | macOS | 12.7 or later |
 | Mac | Intel or Apple Silicon |
-| iPhone | iOS 16+ requires Developer Mode; RC9 can prepare the setting for the selected trusted USB device |
+| iPhone | iOS 16+ requires Developer Mode; the app can prepare the setting for the selected trusted USB device |
 | Connection | Unlocked, trusted USB connection recommended |
 | iOS | Userspace support for iOS 17.4 and later; iOS 17.0-17.3.x is unsupported |
 | Runtime | Compatible Python 3 is required when no healthy app-managed runtime exists |
@@ -60,11 +60,11 @@ No jailbreak, root access, `sudo`, administrator AppleScript, or persistent kern
 3. Open the DMG and drag **RedRiveRR GPS Spoofer** to **Applications**.
 4. Launch the app, connect and trust the iPhone, then select the target device explicitly.
 
-RC9 is unsigned and unnotarized. It is provided specifically to test the new Developer Mode preparation flow while final Apple distribution credentials and clean-device validation are completed.
+RC10 is unsigned and unnotarized. This is intentional and permanent for this product; there is no Apple Developer ID signature and no notarization ticket. Follow the Gatekeeper steps below on first launch.
 
-## Developer Mode Test
+## Developer Mode
 
-RC9 adds a **Prepare Developer Mode** action for the explicitly selected, unlocked, trusted USB iPhone. It asks Apple's device service to reveal the Developer Mode setting without Xcode, 3uTools, root, `sudo`, administrator AppleScript, or a tunnel.
+The app provides a **Prepare Developer Mode** action for the explicitly selected, unlocked, trusted USB iPhone. It asks Apple's device service to reveal the Developer Mode setting without Xcode, 3uTools, root, `sudo`, administrator AppleScript, or a tunnel.
 
 Apple still requires the user-controlled completion steps. After preparation succeeds, open **Settings → Privacy & Security → Developer Mode** on the iPhone, enable it, accept the restart, and confirm **Enable** after reboot with the device passcode. Return to the app and refresh the status before applying a location.
 
@@ -72,7 +72,7 @@ The existing location, runtime, license, Clear, Stop, and safety-cleanup paths w
 
 ## macOS Gatekeeper Warning
 
-RC9 is not signed with an Apple-issued Developer ID certificate and has not been notarized by Apple. The current DMG therefore produces the warning that macOS cannot verify the developer or check the app for malicious software. This warning means Gatekeeper has no usable signature or notarization ticket for the app; it does not mean macOS completed a malware check and approved the app.
+RC10 is not signed with an Apple-issued Developer ID certificate and has not been notarized by Apple. The current DMG therefore produces the warning that macOS cannot verify the developer or check the app for malicious software. This warning means Gatekeeper has no usable signature or notarization ticket for the app; it does not mean macOS completed a malware check and approved the app.
 
 Only continue if you downloaded the DMG from the official RedRiveRR GitHub Release and its SHA-256 matches the value published above.
 
@@ -92,7 +92,7 @@ The permanent publisher-side fix requires Apple Developer Program access and a n
 
 ## Runtime Setup
 
-RC9 uses a guided Terminal setup instead of attempting a silent installation inside the app. It does not install Python itself. A healthy manual Python runtime is sufficient for device discovery, but persistent userspace location sessions require the verified app-managed runtime.
+The app uses a guided Terminal setup instead of attempting a silent installation inside the app. It does not install Python itself. A healthy manual Python runtime is sufficient for device discovery, but persistent userspace location sessions require the verified app-managed runtime.
 
 When a compatible Python 3 exists, the command displayed by **Runtime Setup**:
 
@@ -105,7 +105,7 @@ When a compatible Python 3 exists, the command displayed by **Runtime Setup**:
 
 1. Keep the Mac connected to the internet and launch the app.
 2. Open **Runtime Setup** beside **Need help?**. If it reports that Python is missing, install Python 3 from the official Python website, reopen the app, and return to Runtime Setup.
-   If it reports **Manual Python runtime**, the app may discover devices but Apply remains unavailable. RC9 keeps the required Terminal command visible so you can complete the app-managed setup.
+   If it reports **Manual Python runtime**, the app may discover devices but Apply remains unavailable. The app keeps the required Terminal command visible so you can complete the app-managed setup.
 3. Copy the complete command shown by the app and select **Open Terminal**.
 4. Paste the command into Terminal, press Return, and wait for the completion message. Package download and setup can take several minutes.
 5. Return to the app and select **Check Runtime**. Continue only after it reports a healthy app-managed runtime with `pymobiledevice3 10.3.0` and the correct host architecture.
@@ -133,13 +133,13 @@ Removing the Runtime directory deletes the app-managed Python packages. It does 
 - A fresh local app profile starts with `5/5` free successful single-point location changes.
 - Each successful **Apply Location**, favorite, or history coordinate update consumes one free use. A failed Apply does not consume a use.
 - The remaining count is stored locally and persists when the app is closed or the Mac restarts.
-- At `0/5`, new location changes are locked until a valid RC9-compatible license key supplied separately by RedRiveRR is activated.
+- At `0/5`, new location changes are locked until a valid license key is activated.
 - Route and joystick functions are not unlocked by the free-use counter.
 - Clear, Stop, and safety cleanup are never blocked by the counter or license state.
 
 License keys are not published in this repository or in Release notes. Do not post a key in GitHub Issues, screenshots, or logs.
 
-The same separately supplied evaluation test key remains accepted by RC9. Its embedded signed receipt expires no later than **12 August 2026 at 23:31 UTC**. Production licensing is not active in this release candidate.
+Production licensing is active in this release. A purchased key is delivered by email, revealed on the claim page, and activated in the app under **License**. Activation is verified against a signed receipt; the raw key is never stored after verification.
 
 ## Use And Safety
 
@@ -155,7 +155,7 @@ The same separately supplied evaluation test key remains accepted by RC9. Its em
 - Apple MapKit may download map data.
 - Runtime setup may download pinned packages and dependencies.
 - Update checks may request public GitHub release metadata.
-- Production payment and online licensing are not active in this release candidate. RC9 can verify a separately supplied test license key locally after the five free changes are used.
+- Production payment and online licensing are active. Activation and periodic licence refresh contact the RedRiveRR licensing service.
 
 ## Support
 

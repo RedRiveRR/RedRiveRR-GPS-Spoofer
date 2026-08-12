@@ -1,5 +1,21 @@
 # Release Notes
 
+## 1.1.0-rc.10
+
+Public prerelease for Intel and Apple Silicon Macs. This is not a stable release.
+
+- Session Mode is the only location simulation mode. Persistent Mode has been removed, along with its recovery state, so a withdrawn feature can no longer raise a restore warning.
+- Adds Turkish and English localization with an in-app language switch under **Settings -> General**. The choice is remembered across launches.
+- Adds device hot-plug handling: connecting an iPhone after launch, and disconnect followed by reconnect, are detected without restarting the app.
+- Retry now performs a real rediscovery instead of reusing cached runtime and device handles.
+- Restore no longer stalls: the helper IPC write is bounded, and device polling pauses while a session owns the iPhone.
+- Production licensing is active. Keys are delivered by email, revealed on the claim page and activated in the app.
+- Physically tested on Intel and Apple Silicon Macs: Apply, Stop, Restore, repeated Apply/Stop/Restore cycles, and hot-plug reconnect.
+- 244 deterministic macOS tests pass with 0 failures. Universal `arm64`/`x86_64`, deployment target macOS 12.7.
+- Remains unsigned and unnotarized by design. iOS 17.0-17.3.x remains unsupported.
+
+Only the DMG and SHA-256 file are published as Release assets. Source code remains private.
+
 ## 1.1.0-rc.9 - Developer Mode Test
 
 Public test prerelease for Intel and Apple Silicon Macs. This is not a stable release.

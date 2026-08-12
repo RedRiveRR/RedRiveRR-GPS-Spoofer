@@ -28,15 +28,15 @@ Download the current test release candidate from [GitHub Releases](https://githu
 
 Only the macOS DMG and its SHA-256 checksum are provided as uploaded Release assets. This repository contains distribution documentation and branding only.
 
-> **Test-build notice:** RC9 is a prerelease for validating first-use Developer Mode preparation on trusted USB iPhones. It is not a stable release. The app can reveal the Developer Mode setting; Apple still requires the user to enable it on the iPhone, restart, and confirm.
+> **Prerelease notice:** RC10 is a prerelease, not a stable release. Session Mode is the only location simulation mode; Persistent Mode has been removed. This release adds Turkish/English localization with an in-app language switch, device hot-plug detection and reconnect handling, and runtime repair support.
 
-> **macOS security notice:** RC9 is unsigned and unnotarized. If macOS says the developer cannot be verified, verify the DMG checksum and follow the [English Gatekeeper instructions](README.en.md#macos-gatekeeper-warning) or [Turkish Gatekeeper instructions](README.tr.md#macos-gatekeeper-uyarısı). Do not disable Gatekeeper or remove quarantine in Terminal.
+> **macOS security notice:** RC10 is unsigned and unnotarized. If macOS says the developer cannot be verified, verify the DMG checksum and follow the [English Gatekeeper instructions](README.en.md#macos-gatekeeper-warning) or [Turkish Gatekeeper instructions](README.tr.md#macos-gatekeeper-uyarısı). Do not disable Gatekeeper or remove quarantine in Terminal.
 
-> **Free-use notice:** RC9 includes five successful single-point location changes on each fresh local app profile. The count persists between launches. After `0/5`, a separately supplied valid license key is required; Clear, Stop, and safety cleanup remain available.
+> **Free-use notice:** RC10 includes five successful single-point location changes on each fresh local app profile. The count persists between launches. After `0/5`, a separately supplied valid license key is required; Clear, Stop, and safety cleanup remain available.
 
-> **Test-key validity:** The same separately supplied evaluation test key remains accepted by RC9. Its embedded signed receipt expires no later than **12 August 2026 at 23:31 UTC**. Production licensing is not active in this release candidate.
+> **Licensing:** Production licensing is active in this release. A purchased key is delivered by email, revealed on the claim page, and activated in the app under **License**.
 
-> **Runtime notice:** RC9 does not install Python itself. A valid manual Python runtime supports device discovery only; Apply requires the isolated app-managed runtime. Runtime Setup keeps its Terminal command visible in this state. Run it, wait for completion, then select **Check Runtime**. See the [English runtime instructions](README.en.md#runtime-setup) or [Turkish runtime instructions](README.tr.md#runtime-kurulumu).
+> **Runtime notice:** RC10 does not install Python itself. A valid manual Python runtime supports device discovery only; Apply requires the isolated app-managed runtime. Runtime Setup keeps its Terminal command visible in this state. Run it, wait for completion, then select **Check Runtime**. See the [English runtime instructions](README.en.md#runtime-setup) or [Turkish runtime instructions](README.tr.md#runtime-kurulumu).
 
 ## İndirme
 
@@ -44,14 +44,14 @@ Güncel Developer Mode test release candidate sürümünü [GitHub Releases](htt
 
 Yüklenen Release asset'leri yalnızca macOS DMG dosyası ve SHA-256 doğrulama dosyasıdır. Bu repo sadece dağıtım belgelerini ve marka varlığını içerir.
 
-> **Test sürümü bildirimi:** RC9, güvenilmiş USB iPhone'larda ilk Developer Mode hazırlığını doğrulamak için yayımlanan bir ön sürümdür; kararlı sürüm değildir. Uygulama Developer Mode ayarını görünür hâle getirebilir; Apple yine de ayarın iPhone'da açılmasını, yeniden başlatmayı ve kullanıcı onayını zorunlu tutar.
+> **Ön sürüm bildirimi:** RC10 bir ön sürümdür, kararlı sürüm değildir. Konum simülasyonu için tek mod Oturum (Session) Modu'dur; Kalıcı (Persistent) Mod kaldırılmıştır. Bu sürüm uygulama içi dil değiştirme ile Türkçe/İngilizce yerelleştirme, cihaz tak-çıkar algılama ve çalışma ortamı onarımı getirir.
 
-> **macOS güvenlik bildirimi:** RC9 imzasızdır ve Apple notarization işlemi yapılmamıştır. macOS geliştiricinin doğrulanamadığını söylerse DMG checksum değerini doğrulayın ve [Türkçe Gatekeeper adımlarını](README.tr.md#macos-gatekeeper-uyarısı) izleyin. Gatekeeper'ı kapatmayın veya Terminal üzerinden quarantine kaldırmayın.
+> **macOS güvenlik bildirimi:** RC10 imzasızdır ve Apple notarization işlemi yapılmamıştır. macOS geliştiricinin doğrulanamadığını söylerse DMG checksum değerini doğrulayın ve [Türkçe Gatekeeper adımlarını](README.tr.md#macos-gatekeeper-uyarısı) izleyin. Gatekeeper'ı kapatmayın veya Terminal üzerinden quarantine kaldırmayın.
 
-> **Ücretsiz kullanım bildirimi:** RC9, her yeni yerel uygulama profiline beş başarılı tek nokta konum değişikliği verir. Sayaç uygulama yeniden açıldığında korunur. `0/5` sonrasında ayrıca sağlanan geçerli lisans anahtarı gerekir; Clear, Stop ve güvenlik temizliği kullanılabilir kalır.
+> **Ücretsiz kullanım bildirimi:** RC10, her yeni yerel uygulama profiline beş başarılı tek nokta konum değişikliği verir. Sayaç uygulama yeniden açıldığında korunur. `0/5` sonrasında ayrıca sağlanan geçerli lisans anahtarı gerekir; Clear, Stop ve güvenlik temizliği kullanılabilir kalır.
 
-> **Test anahtarı geçerliliği:** Ayrıca sağlanan aynı değerlendirme test anahtarı RC9 tarafından kabul edilir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
+> **Lisanslama:** Production lisanslama bu sürümde aktiftir. Satın alınan anahtar e-posta ile iletilir, claim sayfasında gösterilir ve uygulamada **Lisans** bölümünden etkinleştirilir.
 
-> **Runtime bildirimi:** RC9 Python'ı kendisi kurmaz. Geçerli manuel Python yalnızca cihaz keşfini destekler; Apply için izole app-managed runtime gerekir. Runtime Setup bu durumda Terminal komutunu görünür tutar. Komutu çalıştırın, tamamlanmasını bekleyin ve **Check Runtime** seçeneğine basın. [Türkçe runtime yönergelerine](README.tr.md#runtime-kurulumu) bakın.
+> **Runtime bildirimi:** RC10 Python'ı kendisi kurmaz. Geçerli manuel Python yalnızca cihaz keşfini destekler; Apply için izole app-managed runtime gerekir. Runtime Setup bu durumda Terminal komutunu görünür tutar. Komutu çalıştırın, tamamlanmasını bekleyin ve **Check Runtime** seçeneğine basın. [Türkçe runtime yönergelerine](README.tr.md#runtime-kurulumu) bakın.
 
 Copyright © 2024-2026 RedRiveRR. All rights reserved.
