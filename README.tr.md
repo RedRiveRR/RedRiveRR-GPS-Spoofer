@@ -22,6 +22,8 @@
 
 Konum simülasyonu için tek mod Oturum (Session) Modu'dur; Kalıcı (Persistent) Mod kaldırılmıştır. Bu sürüm, uygulama içi dil değiştirme ile Türkçe ve İngilizce yerelleştirme, cihaz tak-çıkar algılama ve yeniden bağlanma yönetimi ve çalışma ortamı onarımı desteği getirir.
 
+Arayüz **English** ve **Türkçe** dillerinde kullanılabilir; **Ayarlar -> Genel -> Dil** bölümünden seçilir ve seçim açılışlar arasında korunur. Teknik tanılama ve kayıt (log) çıktıları İngilizce kalır.
+
 Bu yapı imzasız ve notarize edilmemiştir. Bu bilinçli bir tercihtir — aşağıdaki kurulum adımlarına bakın.
 
 Universal binary hem `x86_64` hem `arm64` slice içerir ve bu sürüm Intel ile Apple Silicon Mac'lerde fiziksel olarak test edilmiştir.
@@ -139,7 +141,7 @@ Runtime klasörünü kaldırmak uygulamanın yönettiği Python paketlerini sile
 
 Lisans anahtarları bu repoda veya Release notlarında yayımlanmaz. Anahtarı GitHub Issues, ekran görüntüsü veya log içinde paylaşmayın.
 
-Ayrıca sağlanan aynı değerlendirme test anahtarı RC10 tarafından kabul edilir. Gömülü imzalı receipt en geç **12 Ağustos 2026 23:31 UTC** tarihinde sona erer. Bu release candidate içinde production lisanslama aktif değildir.
+Production lisanslama bu sürümde aktiftir. Satın alınan anahtar e-posta ile iletilir, claim sayfasında gösterilir ve uygulamada **Lisans** bölümünden etkinleştirilir. Etkinleştirme imzalı bir receipt ile doğrulanır; ham anahtar doğrulamadan sonra saklanmaz.
 
 ## Kullanım Ve Güvenlik
 
@@ -155,7 +157,7 @@ Ayrıca sağlanan aynı değerlendirme test anahtarı RC10 tarafından kabul edi
 - Apple MapKit harita verisi indirebilir.
 - Runtime kurulumu sabitlenmiş paketleri ve bağımlılıkları indirebilir.
 - Güncelleme kontrolü public GitHub sürüm bilgisini sorgulayabilir.
-- Bu release candidate içinde production ödeme ve online lisanslama aktif değildir. RC10, beş ücretsiz hak bittikten sonra ayrıca sağlanan test lisans anahtarını yerel olarak doğrulayabilir.
+- Production ödeme ve online lisanslama aktiftir. Etkinleştirme ve düzenli lisans yenileme RedRiveRR lisans servisiyle iletişim kurar.
 
 ## Destek
 

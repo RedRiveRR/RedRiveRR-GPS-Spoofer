@@ -22,6 +22,8 @@ Version `1.1.0-rc.10` is a public test prerelease. It is not a stable release.
 
 Session Mode is the only location simulation mode; Persistent Mode has been removed. This release adds Turkish and English localization with an in-app language switch, device hot-plug detection and reconnect handling, and runtime repair support.
 
+The interface is available in **English** and **Türkçe**, selectable from **Settings -> General -> Language**; the choice is remembered between launches. Technical diagnostics and log output remain in English.
+
 This build is unsigned and not notarized. That is intentional — see the installation steps below.
 
 The universal binary contains both `x86_64` and `arm64` slices, and this release has been physically tested on Intel and Apple Silicon Macs.
