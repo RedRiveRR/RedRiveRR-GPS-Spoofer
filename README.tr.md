@@ -24,7 +24,7 @@ Konum simülasyonu için tek mod Oturum (Session) Modu'dur; Kalıcı (Persistent
 
 Bu yapı imzasız ve notarize edilmemiştir. Bu bilinçli bir tercihtir — aşağıdaki kurulum adımlarına bakın.
 
-**Bilinen kısıt:** universal binary hem `x86_64` hem `arm64` slice içerir, ancak Apple Silicon bu projede fiziksel olarak test edilmemiştir.
+Universal binary hem `x86_64` hem `arm64` slice içerir ve bu sürüm Intel ile Apple Silicon Mac'lerde fiziksel olarak test edilmiştir.
 
 - [Universal DMG dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg)
 - [SHA-256 doğrulama dosyasını indir](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg.sha256)

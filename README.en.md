@@ -24,7 +24,7 @@ Session Mode is the only location simulation mode; Persistent Mode has been remo
 
 This build is unsigned and not notarized. That is intentional — see the installation steps below.
 
-**Known limitation:** the universal binary contains both `x86_64` and `arm64` slices, but Apple Silicon has not been physically tested for this project.
+The universal binary contains both `x86_64` and `arm64` slices, and this release has been physically tested on Intel and Apple Silicon Macs.
 
 - [Download the universal DMG](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg)
 - [Download the SHA-256 checksum](https://github.com/RedRiveRR/RedRiveRR-GPS-Spoofer/releases/download/v1.1.0-rc.10/RedRiveRR-GPS-Spoofer-1.1.0-rc.10-universal.dmg.sha256)
